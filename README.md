@@ -8,7 +8,7 @@
 
 ### Libraries
 
-- [Typescript@4.1.x](https://www.typescriptlang.org/)
+- [Typescript@4.1.5](https://www.typescriptlang.org/)
 - [Vue.js@v2](https://vuejs.org/)
 - [vuex@v3](https://vuex.vuejs.org/)
 - [Vue Class Component](https://class-component.vuejs.org/)
