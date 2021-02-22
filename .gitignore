@@ -149,6 +149,7 @@ dist
 !.vscode/launch.json
 !.vscode/extensions.json
 *.code-workspace
+.history
 
 ### Vue ###
 # gitignore template for Vue.js projects
