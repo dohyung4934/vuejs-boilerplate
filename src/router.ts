@@ -4,7 +4,7 @@ import VueRouter, { RouteConfig } from 'vue-router'
 import Home from './components/Home.vue'
 import Card from '@pages/card/index.vue'
 import MyComponent from './components/MyComponent.vue'
-import Register from './components/Register.vue'
+import Register from '@pages/member/Register.vue'
 
 Vue.use(VueRouter)
 
