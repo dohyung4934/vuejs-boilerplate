@@ -27,17 +27,17 @@
 <script lang="ts">
 import { component } from 'node_modules/vue/types/umd'
 import { Vue, Component, Watch } from 'vue-property-decorator'
-import { GlobalValidate, validateForm } from '@/services/globalValidator'
+import { ValidatePreset, ValidateRegExp, validateForm } from '@/services/globalValidator'
 
 @Component({
     components: {}
 })
 export default class RegisterComponent extends Vue {
-    @GlobalValidate('Register', /^[A-Za-z가-힣 ]{1,15}$/, '이름은 한글 또는 영문으로만 입력 가능하며, 길이는 최대 15자까지 허용됩니다.')
+    @ValidateRegExp(/^[A-Za-z가-힣 ]{1,15}$/, '이름은 한글 또는 영문으로만 입력 가능하며, 길이는 최대 15자까지 허용됩니다.')
     name = ''
-    @GlobalValidate('Register', /^[A-Za-z0-9]{1,15}$/, '아이디는 영문과 숫자로 이루어진 값만 허용되며, 길이는 최대 15자까지 가능합니다.')
+    @ValidateRegExp(/^[A-Za-z0-9]{1,15}$/, '아이디는 영문과 숫자로 이루어진 값만 허용되며, 길이는 최대 15자까지 가능합니다.')
     username = ''
-    @GlobalValidate('Register', /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&()\-_=+]).{8,30}$/, '비밀번호는 영문, 숫자, 특수문자를 각각 1자씩 포함해야 하며, 전체 길이는 8자 ~ 30자 사이여야 합니다.')
+    @ValidateRegExp(/^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&()\-_=+]).{8,30}$/, '비밀번호는 영문, 숫자, 특수문자를 각각 1자씩 포함해야 하며, 전체 길이는 8자 ~ 30자 사이여야 합니다.')
     password = ''
 
     nameError = ''
@@ -47,22 +47,22 @@ export default class RegisterComponent extends Vue {
     @Watch('name')
     onNameChange(): void {
         //this.validateName()
-        validateForm('Register', this, 'name')
+        validateForm(this, 'name')
     }
     @Watch('username')
     onUsernameChange(): void {
         //this.validateUsername()
-        validateForm('Register', this, 'username')
+        validateForm(this, 'username')
     }
     @Watch('password')
     onPasswordChange(): void {
         //this.validatePassword()
-        validateForm('Register', this, 'password')
+        validateForm(this, 'password')
     }
 
     formSubmit(e: Event): void {
         //if (this.formHasErrors()) {
-        if (!validateForm('Register', this)) {
+        if (!validateForm(this)) {
             e.preventDefault()
         } else {
             alert('성공')
