@@ -1,6 +1,11 @@
 <template>
     <div>
-        <router-link :to="{ name: 'Register' }">회원 가입</router-link>
+        <div>
+            <router-link :to="{ name: 'MemberRegister' }">회원 가입</router-link>
+        </div>
+        <div>
+            <router-link :to="{ name: 'MemberList' }">회원 목록</router-link>
+        </div>
     </div>
 </template>
 

@@ -4,7 +4,8 @@ import VueRouter, { RouteConfig } from 'vue-router'
 import Home from './components/Home.vue'
 import Card from '@pages/card/index.vue'
 import MyComponent from './components/MyComponent.vue'
-import Register from '@pages/member/Register.vue'
+import MemberRegister from '@pages/member/Register.vue'
+import MemberList from '@pages/member/List.vue'
 
 Vue.use(VueRouter)
 
@@ -19,9 +20,14 @@ const routes: Array<RouteConfig> = [
         component: Home
     },
     {
-        path: '/register',
-        name: 'Register',
-        component: Register
+        path: '/members/register',
+        name: 'MemberRegister',
+        component: MemberRegister
+    },
+    {
+        path: '/members/list',
+        name: 'MemberList',
+        component: MemberList
     },
     {
         path: '/card',

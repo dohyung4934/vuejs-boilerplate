@@ -1,9 +1,9 @@
 import { makeCard } from './card'
-import { helloWorld } from './helloWorld'
+import getMembers from './members'
 
 const card = makeCard()
 
 export default {
     card,
-    helloWorld: helloWorld()
+    members: getMembers()
 }
